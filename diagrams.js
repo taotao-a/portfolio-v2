@@ -1,0 +1,8 @@
+function draw(){
+ const map=root.querySelector('.loop-map');
+ if(map?.offsetWidth){const r=map.getBoundingClientRect(),from=root.querySelector('#teaching-stage').getBoundingClientRect(),to=root.querySelector('#educator-gate').getBoundingClientRect();const x=from.right-r.left,y1=from.top-r.top+from.height/2,y2=to.top-r.top+to.height/2;root.querySelector('.return-path').setAttribute('d',`M${x} ${y1}H${r.width-22}V${y2}H${x+3}`);const label=root.querySelector('.loop-label');label.style.top=((y1+y2)/2-23)+'px';label.style.bottom='auto'}
+ const network=root.querySelector('.network');
+ if(network?.offsetWidth){const r=network.getBoundingClientRect(),g=network.querySelector('.eco-paths');g.replaceChildren();const bounds=id=>network.querySelector(`[data-actor="${id}"]`).getBoundingClientRect();const add=d=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);g.append(p)};for(const[a,b]of[['industry','platform'],['university','platform'],['platform','teacher'],['teacher','student']]){const s=bounds(a),t=bounds(b);add(`M${s.left-r.left+s.width/2} ${s.bottom-r.top}L${t.left-r.left+t.width/2} ${t.top-r.top-3}`)}const s=bounds('student'),t=bounds('teacher'),sy=s.top-r.top+s.height/2,ty=t.top-r.top+t.height/2;add(`M${s.right-r.left} ${sy}H${r.width-4}V${ty}H${t.right-r.left+3}`);network.querySelector('.student-feedback').style.top=((sy+ty)/2-16)+'px'}
+}
+
+const diagramObserver=new ResizeObserver(draw);if(root.querySelector(".network"))diagramObserver.observe(root.querySelector(".network"));if(root.querySelector(".loop-map"))diagramObserver.observe(root.querySelector(".loop-map"));requestAnimationFrame(draw);

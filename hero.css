@@ -1,0 +1,99 @@
+/* P01 only — Automotive Intelligence / Industrial Editorial Tech. */
+#p01.case-hero {
+  --hero-navy: #101c2b;
+  --hero-paper: #f0f3f5;
+  --hero-muted: #acb9c8;
+  --hero-electric: #528eff;
+  --hero-teal: #65c7be;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0,48fr) minmax(0,52fr);
+  align-items: center;
+  gap: 20px 24px;
+  max-width: none;
+  min-height: 95vh;
+  min-height: 95svh;
+  margin: 0;
+  padding: 68px max(24px,calc((100vw - 1400px)/2)) 28px;
+  overflow: hidden;
+  border: 0;
+  background: var(--hero-navy);
+  color: var(--hero-paper);
+}
+#p01.case-hero::before {content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background-image: linear-gradient(#a5b9d005 1px,transparent 1px),linear-gradient(90deg,#a5b9d005 1px,transparent 1px); background-size: 96px 96px;}
+#p01 .hero-editorial {position: relative; z-index: 1; min-width: 0; padding: 20px 0;}
+#p01 .eyebrow {margin: 0 0 30px; color: var(--hero-muted); font: 11px/1.6 'Consolas','Courier New',monospace; letter-spacing: 1.25px;}
+#p01 h1 {margin: 0 0 30px; font-family: 'Arial','Helvetica Neue',sans-serif; font-size: clamp(32px,3.65vw,56px); font-weight: 700; line-height: 1.08; letter-spacing: -.055em; color: var(--hero-paper);}
+#p01 h1 span {display: block;}
+#p01 h1 span:last-child {color: #94b8f4;}
+#p01 .hero-description {max-width: 490px; margin: 0; color: var(--hero-muted); font-size: clamp(17px,1.4vw,20px); line-height: 1.65;}
+#p01 .hero-project-info {display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; margin: 42px 0 0; padding-top: 22px; border-top: 1px solid #a4bbd326;}
+#p01 .hero-project-info > div:first-child {grid-column: 1/-1;}
+#p01 .hero-project-info dt {margin-bottom: 7px; font: 10px/1.5 'Consolas','Courier New',monospace; text-transform: uppercase; letter-spacing: 1.3px; color: #8e9fb3;}
+#p01 .hero-project-info dd {margin: 0; color: #e1e7ef; font-size: 13px; line-height: 1.6;}
+#p01 .hero-status-dot {display: inline-block; width: 5px; height: 5px; margin: 0 8px 2px 0; background: var(--hero-teal);}
+#p01 .hero-system {min-width: 0; width: 100%; max-width: 690px; justify-self: center;}
+#p01 .hero-schematic {display: block; width: 100%; height: auto; overflow: visible;}
+#p01 .hero-grid {color: #9eb5cf; opacity: .12;}
+#p01 .hero-coordinates {stroke: #7893b1; stroke-width: 1; opacity: .45;}
+#p01 .hero-technical-label {font: 10px 'Consolas','Courier New',monospace; letter-spacing: 1.4px; fill: #8fa4bd;}
+#p01 .hero-coordinate-label {opacity: .65; font-size: 9px;}
+#p01 .hero-chassis {stroke: #718eac; stroke-width: 1; opacity: .34;}
+#p01 .hero-chassis .hero-dimension {stroke-dasharray: 3 5; opacity: .65;}
+#p01 .hero-chassis-label {font-size: 8px; opacity: .6;}
+#p01 .hero-signal text {fill: #c1cddd; font: 12px 'Consolas','Courier New',monospace;}
+#p01 .hero-signal circle {fill: var(--hero-electric);}
+#p01 .signal-policy circle {fill: #c98f60;}
+#p01 .hero-input-label {fill: #c1cddd; font-size: 11px;}
+#p01 .hero-connections {stroke: var(--hero-electric); stroke-width: 1; opacity: .6;}
+#p01 .hero-travelling-signal {stroke: #adcaff; stroke-width: 2; stroke-dasharray: 3 97; stroke-dashoffset: 3; opacity: 0;}
+#p01 .hero-core-plate {fill: #142942; stroke: #528eff; stroke-width: 1;}
+#p01 .hero-core-brackets {stroke: var(--hero-electric); stroke-width: 1.5;}
+#p01 .hero-core-title {fill: #f0f3f5; font: 600 20px 'Arial',sans-serif; letter-spacing: 2px;}
+#p01 .hero-core-subtitle {fill: #a9bfdf; font: 7px 'Consolas','Courier New',monospace; letter-spacing: .2px;}
+#p01 .hero-judgement-path {stroke: var(--hero-teal); stroke-width: 1; opacity: .65;}
+#p01 .hero-judgement {fill: #a9e0d9; stroke: var(--hero-teal); stroke-width: 1;}
+#p01 .hero-judgement text {stroke: none; font: 12px 'Consolas','Courier New',monospace; letter-spacing: 1.1px;}
+#p01 .hero-judgement-rule {opacity: .4;}
+#p01 .hero-judgement-diamond {fill: var(--hero-navy); stroke-width: 1.5;}
+#p01 .hero-judgement-backplate {fill: var(--hero-navy); stroke: none;}
+#p01 .hero-teaching path {stroke: #9ab7d7; stroke-width: 1; fill: none;}
+#p01 .hero-teaching text {fill: #d9e5f2; font: 12px 'Consolas','Courier New',monospace; letter-spacing: 2px;}
+#p01 .hero-scroll-cue {grid-column: 1/-1; justify-self: start; align-self: end; display: inline-flex; align-items: center; gap: 24px; min-height: 44px; padding: 8px 0; font-size: 12px; color: var(--hero-muted);}
+#p01 .hero-scroll-cue span:last-child {color: var(--hero-electric); font-size: 18px;}
+#p01 .hero-scroll-cue:focus-visible {outline: 2px solid var(--hero-electric); outline-offset: 6px;}
+/* The entry sequence runs once; only a single signal continues at rest. */
+#p01.hero-motion h1,#p01.hero-motion .hero-description,#p01.hero-motion .hero-project-info {animation: p01-rise 700ms ease both;}
+#p01.hero-motion .hero-description {animation-delay: 100ms;}
+#p01.hero-motion .hero-project-info {animation-delay: 180ms;}
+#p01.hero-motion .hero-signal-nodes {animation: p01-appear 550ms ease 250ms both;}
+#p01.hero-motion .hero-connections path {animation: p01-draw 900ms ease 500ms both;}
+#p01.hero-motion .hero-ai-core {animation: p01-appear 600ms ease 1050ms both;}
+#p01.hero-motion .hero-judgement-path {animation: p01-draw 500ms ease 1400ms both;}
+#p01.hero-motion .hero-judgement {animation: p01-appear 600ms ease 1600ms both;}
+#p01.hero-motion .hero-teaching {animation: p01-appear 650ms ease 2000ms both;}
+#p01.hero-motion .hero-travelling-signal {animation: p01-signal 12s linear 3500ms infinite;}
+#p01.hero-paused .hero-travelling-signal {animation-play-state: paused;}
+@keyframes p01-rise {from {opacity: 0; transform: translateY(12px);} to {opacity: 1; transform: translateY(0);}}
+@keyframes p01-appear {from {opacity: 0;} to {opacity: 1;}}
+@keyframes p01-draw {from {stroke-dasharray: 1; stroke-dashoffset: 1;} to {stroke-dasharray: 1; stroke-dashoffset: 0;}}
+@keyframes p01-signal {0%,5% {opacity: 0; stroke-dashoffset: 3;} 9% {opacity: .8;} 36% {opacity: .8;} 40%,100% {opacity: 0; stroke-dashoffset: -100;}}
+@media (min-width: 1600px) {#p01 .hero-project-info {grid-template-columns: 1.4fr 1fr 1fr;} #p01 .hero-project-info > div:first-child {grid-column: auto;}}
+@media (max-width: 1000px) {#p01.case-hero {grid-template-columns: 1fr; gap: 12px; padding: 60px 32px 24px;} #p01 .hero-editorial {max-width: 680px;} #p01 h1 {font-size: clamp(36px,6.4vw,62px);} #p01 .hero-description {max-width: 550px;} #p01 .hero-project-info {grid-template-columns: 1.5fr 1fr 1fr;} #p01 .hero-project-info > div:first-child {grid-column: auto;} #p01 .hero-system {max-width: 620px;} }
+@media (max-width: 540px) {#p01.case-hero {padding: 44px 20px 20px; gap: 20px;} #p01 .eyebrow {font-size: 9px; letter-spacing: .7px; margin-bottom: 26px;} #p01 h1 {font-size: clamp(26px,6.65vw,36px); letter-spacing: -.05em; line-height: 1.13; margin-bottom: 24px;} #p01 .hero-description {font-size: 16px;} #p01 .hero-project-info {grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px;} #p01 .hero-project-info > div:first-child {grid-column: 1/-1;} #p01 .hero-project-info dd {font-size: 12px;} #p01 .hero-system {width: calc(100% + 16px); max-width: none; margin-inline: -8px;} #p01 .hero-scroll-cue {margin-top: 0;} }
+@media (prefers-reduced-motion: reduce) {#p01.case-hero *,#p01.case-hero *::before,#p01.case-hero *::after {animation: none !important; transition: none !important;} #p01 .hero-travelling-signal {display: none;}}
+
+/* Four staggered inputs and both output segments; pause when out of view. */
+#p01 .hero-travelling-signal {stroke:#b7d2ff; stroke-width:2.2; stroke-linecap:round; stroke-dasharray:7 93; pointer-events:none;}
+#p01 .hero-output-signal {stroke:#8cddd2; stroke-dasharray:12 88;}
+#p01.hero-motion .hero-travelling-signal {animation:p01-continuous-signal 4s linear var(--signal-delay,0s) infinite;}
+#p01.hero-motion .hero-output-signal {animation-duration:2.6s;}
+#p01.hero-paused .hero-travelling-signal,body.signals-paused #p01 .hero-travelling-signal {animation-play-state:paused;}
+@keyframes p01-continuous-signal {
+  0% {stroke-dashoffset:7; opacity:0;}
+  7% {opacity:1;}
+  88% {opacity:1;}
+  100% {stroke-dashoffset:-100; opacity:0;}
+}
+@media(prefers-reduced-motion:reduce) {#p01 .hero-travelling-signal {display:none;}}

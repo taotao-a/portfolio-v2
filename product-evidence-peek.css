@@ -1,0 +1,44 @@
+/* Shared evidence hierarchy: three primary peeks, quieter contextual links. */
+.product-evidence-peek {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 390px);
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  box-shadow: none;
+  cursor: pointer;
+  transition: border-color 220ms ease, background-color 220ms ease, transform 220ms ease;
+}
+.evidence-peek-eyebrow {font-size: 10px; letter-spacing: 1.2px; color: var(--muted); font-weight: 600;}
+.evidence-peek-heading {font-size: 18px; line-height: 1.35; font-weight: 600; letter-spacing: -.3px;}
+.evidence-peek-copy {font-size: 12px; line-height: 1.5; color: var(--muted);}
+.evidence-peek-preview {display: block; height: 72px; overflow: hidden; border-radius: 6px; border: 1px solid var(--line); margin: 4px 0; background: var(--bg);}
+.evidence-peek-preview img {display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; transition: transform 220ms ease;}
+.evidence-peek-action {display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 10px 14px; border: 1px solid #b8cff2; border-radius: 8px; background: var(--highlight); color: #235bba; font-size: 15px; line-height: 1.5; font-weight: 600; transition: background-color 220ms ease, border-color 220ms ease;}
+.evidence-action-arrow {display: inline-block; flex-shrink: 0; transition: transform 220ms ease;}
+.product-evidence-inline {display: inline-flex; align-items: center; gap: 12px; min-height: 44px; max-width: 100%; padding: 10px 14px; border: 1px solid #c4d7f3; border-radius: 8px; background: var(--highlight); color: #235bba; font-size: 14px; font-weight: 600; line-height: 1.5; text-align: left; cursor: pointer; transition: background-color 220ms ease, border-color 220ms ease;}
+.product-evidence-inline .evidence-action-label {background: linear-gradient(currentColor, currentColor) left bottom / 0% 1px no-repeat; transition: background-size 220ms ease;}
+.product-evidence-peek:focus-visible,.product-evidence-inline:focus-visible,#citation:focus-visible {outline: 3px solid var(--blue); outline-offset: 4px;}
+.product-evidence-peek:focus-visible {border-color: var(--blue); background: var(--highlight);}
+.product-evidence-inline:focus-visible,.product-evidence-peek:focus-visible .evidence-peek-action {background: #dceaff; border-color: var(--blue);}
+.product-evidence-inline:focus-visible .evidence-action-label {background-size: 100% 1px;}
+#citation.citation-chip {position: relative; min-height: 36px; min-width: 36px; padding: 4px 8px; border: 1px solid #cadcf8; border-radius: 7px; cursor: pointer; transition: background-color 220ms ease, border-color 220ms ease;}
+.citation-microcopy {position: absolute; bottom: calc(100% + 8px); left: 0; padding: 5px 9px; border: 1px solid #cadcf8; border-radius: 6px; background: var(--highlight); color: #235bba; font-size: 12px; font-weight: 500; letter-spacing: 0; line-height: 1.5; white-space: nowrap; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 200ms ease;}
+#citation:focus-visible .citation-microcopy {opacity: 1; visibility: visible;}
+@media (hover: hover) {
+  .product-evidence-peek:hover {border-color: var(--blue); transform: translateY(-3px); background: var(--highlight);}
+  .product-evidence-peek:hover img {transform: scale(1.025);}
+  .product-evidence-peek:hover .evidence-action-arrow,.product-evidence-inline:hover .evidence-action-arrow {transform: translate(3px,-3px);}
+  .product-evidence-inline:hover,.product-evidence-peek:hover .evidence-peek-action {background: #dceaff; border-color: var(--blue);}
+  .product-evidence-inline:hover .evidence-action-label {background-size: 100% 1px;}
+  #citation:hover {border-color: var(--blue);}
+  #citation:hover .citation-microcopy {opacity: 1; visibility: visible;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-evidence-peek:hover,.product-evidence-peek:hover img,.product-evidence-peek:hover .evidence-action-arrow,.product-evidence-inline:hover .evidence-action-arrow {transform: none;}
+}
