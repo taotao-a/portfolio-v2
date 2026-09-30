@@ -1,0 +1,1 @@
+(()=>{const section=document.getElementById('p02');if(!section||!('IntersectionObserver'in window))return;const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){section.classList.add('rhythm-motion');observer.disconnect()}},{threshold:.25});observer.observe(section.querySelector('.rhythm-visual'));})();

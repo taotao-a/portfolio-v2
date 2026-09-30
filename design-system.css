@@ -1,0 +1,18 @@
+/* Shared product-detail language. Colours inherit the site's existing palette. */
+:root{--section-max:1200px;--section-x:max(24px,calc((100vw - var(--section-max))/2));--section-y:120px;--narrative-width:390px;--section-gap:70px;--section-sticky-top:140px;--header-height:78px;--detail-heading:clamp(42px,4.2vw,61px);--detail-body:23px;--detail-card-radius:20px;--detail-border:#d7e1ef;--detail-shadow:0 10px 35px #17203306;--motion-fast:200ms;--motion-standard:400ms;--motion-ease:cubic-bezier(.22,.61,.36,1)}
+.trust-section,.transform-section{max-width:none;margin:0;padding:var(--section-y) var(--section-x);display:grid;grid-template-columns:minmax(0,var(--narrative-width)) minmax(0,1fr);gap:var(--section-gap)}
+.trust-intro,.transform-narrative{position:sticky;top:var(--section-sticky-top);align-self:start}
+.trust-intro h2,.transform-narrative h2{font-size:var(--detail-heading)}
+.trust-intro .lead,.transform-narrative .lead{font-size:var(--detail-body);line-height:1.5;color:var(--ink)}
+.answer-card,.concept-card{border:1px solid var(--detail-border);border-radius:var(--detail-card-radius);background:#fff;box-shadow:var(--detail-shadow)}
+.answer-card{transition:transform var(--motion-standard) var(--motion-ease),opacity var(--motion-standard) var(--motion-ease)}
+.citation-card{animation-duration:var(--motion-fast);animation-timing-function:var(--motion-ease)}
+.source-panel{animation-duration:var(--motion-standard);animation-timing-function:var(--motion-ease)}
+.evidence-link{border:0;background:none;padding:10px 0;border-bottom:1px solid #adbfda;font-size:15px;color:#235bba;text-align:left;min-height:44px}
+.concept-header{display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:15px;margin-bottom:28px;color:var(--ink)}
+.concept-header .concept-tag{font-size:11px;font-weight:400;line-height:1.4;color:var(--muted)}
+@media(min-width:1500px){.trust-section,.transform-section{grid-template-columns:var(--narrative-width) 740px;justify-content:center}}
+@media(max-width:1260px){:root{--section-gap:40px;--narrative-width:340px}}
+@media(max-width:900px){:root{--section-x:25px;--section-y:75px}.trust-section,.transform-section{display:block}.trust-intro,.transform-narrative{position:static;max-width:640px}}
+@media(max-width:620px){:root{--section-x:20px;--section-y:70px;--header-height:66px;--detail-heading:44px;--detail-body:21px}}
+@media(prefers-reduced-motion:reduce){:root{--motion-fast:0ms;--motion-standard:0ms}}
